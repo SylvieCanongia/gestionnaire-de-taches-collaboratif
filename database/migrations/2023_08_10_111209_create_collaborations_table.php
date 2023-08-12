@@ -13,16 +13,14 @@ return new class extends Migration
     {
         Schema::create('collaborations', function (Blueprint $table) {
             $table->id('collaboration_id');
-            $table->unsignedBigInteger('task_list_id');
-            $table->unsignedBigInteger('invited_user_id');
-            $table->unsignedBigInteger('inviting_user_id');
             $table->string('invitation_status');
             $table->timestamp('invitation_date')->nullable();
             $table->timestamp('acceptance_date')->nullable();
 
-            $table->foreign('task_list_id')->references('list_id')->on('task_lists');
-            $table->foreign('invited_user_id')->references('id')->on('users');
-            $table->foreign('inviting_user_id')->references('id')->on('users');
+            $table->foreignId('task_list_id')->constrained('task_lists');
+            $table->foreignId('invited_user_id')->constrained('users');
+            $table->foreignId('inviting_user_id')->constrained('users');
+
             $table->timestamps();
         });
     }

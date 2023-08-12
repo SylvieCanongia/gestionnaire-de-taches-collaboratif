@@ -15,8 +15,9 @@ return new class extends Migration
             $table->id('list_id');
             $table->string('list_name');
             $table->text('list_description')->nullable();
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
+
+            $table->foreignId('user_id')->constrained('users'); // Using foreignId() and constrained() for foreign key
+
             $table->timestamps();
         });
     }

@@ -15,11 +15,9 @@ return new class extends Migration
             $table->id('comment_id');
             $table->text('comment_content');
             $table->timestamp('comment_date');
-            $table->unsignedBigInteger('task_id')->nullable();
-            $table->unsignedBigInteger('user_id');
 
-            $table->foreign('task_id')->references('task_id')->on('tasks');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreignId('task_id')->nullable()->constrained('tasks');
+            $table->foreignId('user_id')->constrained('users');
 
             $table->timestamps();
         });

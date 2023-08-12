@@ -16,13 +16,10 @@ return new class extends Migration
             $table->string('task_title');
             $table->text('task_description')->nullable();
             $table->dateTime('due_date');
-            $table->unsignedBigInteger('priority_id')->nullable();
-            $table->unsignedBigInteger('list_id');
-            $table->unsignedBigInteger('user_id');
 
-            $table->foreign('priority_id')->references('priority_id')->on('priorities');
-            $table->foreign('list_id')->references('list_id')->on('task_lists');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreignId('priority_id')->nullable()->constrained('priorities');
+            $table->foreignId('list_id')->constrained('task_lists');
+            $table->foreignId('user_id')->constrained('users');
 
             $table->timestamps();
         });
