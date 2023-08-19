@@ -32,8 +32,8 @@
             @endif
         </div>
         <h1>
-            Hello , bienvenue sur le gestionnaire de tâches collaboratif !
+        Libérez tout votre potentiel avec notre gestionnaire de tâches collaboratif.
         </h1>
-
+        <p> Simplifiez votre quotidien, réalisez vos objectifs. L'inscription est gratuite, la productivité est illimitée !</p>
     </body>
 </html>

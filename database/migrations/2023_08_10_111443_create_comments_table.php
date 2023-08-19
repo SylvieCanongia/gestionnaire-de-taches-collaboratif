@@ -16,7 +16,7 @@ return new class extends Migration
             $table->text('comment_content');
             $table->timestamp('comment_date');
 
-            $table->foreignId('task_id')->nullable()->constrained('tasks');
+            $table->foreignId('task_id')->nullable()->constrained('tasks', 'task_id');
             $table->foreignId('user_id')->constrained('users');
 
             $table->timestamps();

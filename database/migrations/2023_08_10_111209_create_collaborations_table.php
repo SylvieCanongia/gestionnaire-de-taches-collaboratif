@@ -17,7 +17,7 @@ return new class extends Migration
             $table->timestamp('invitation_date')->nullable();
             $table->timestamp('acceptance_date')->nullable();
 
-            $table->foreignId('task_list_id')->constrained('task_lists');
+            $table->foreignId('task_list_id')->constrained('task_lists', 'list_id');
             $table->foreignId('invited_user_id')->constrained('users');
             $table->foreignId('inviting_user_id')->constrained('users');
 

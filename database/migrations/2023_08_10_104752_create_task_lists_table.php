@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('task_lists', function (Blueprint $table) {
             $table->id('list_id');
-            $table->string('list_name');
-            $table->text('list_description')->nullable();
+            $table->string('list_name', 255);
+            $table->string('list_description', 500)->nullable();
 
             $table->foreignId('user_id')->constrained('users'); // Using foreignId() and constrained() for foreign key
 

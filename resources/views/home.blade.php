@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-<example-component></example-component>
+    <example-component></example-component>
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -20,5 +20,9 @@
             </div>
         </div>
     </div>
+    <task-lists-index></task-lists-index>
+    <task-lists-details></task-lists-details>
+    <task-details></task-details>
+    <task-form></task-form>
 </div>
 @endsection
