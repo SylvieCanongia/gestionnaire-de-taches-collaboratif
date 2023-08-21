@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Models\TaskList;
 use App\Models\User;
 
@@ -35,7 +36,7 @@ class TaskListController extends Controller
                 'list_description' => 'nullable|string|max:500',
             ]);
 
-            $user = auth()->user();
+            $user = $request->user();
             $taskList = new TaskList([
                 'list_name' => $validatedData['list_name'],
                 'list_description' => $validatedData['list_description'],
@@ -45,7 +46,8 @@ class TaskListController extends Controller
 
             return response()->json(['message' => 'La liste de tâches a été créée avec succès !']);
         } catch (\Exception $e) {
-            return response()->json(['message' => 'Erreur lors de la création de la liste de tâches'], 500);
+            $statusCode = $e->getCode() ?: 500;
+            return response()->json(['message' => 'Erreur lors de la création de la liste de tâches'], $statusCode);
         }
     }
 }

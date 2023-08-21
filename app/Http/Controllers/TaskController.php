@@ -58,9 +58,9 @@ class TaskController extends Controller
 
             \Log::error('Erreur lors de la création de la tâche : ' . $e->getMessage());
 
-            \Log::error('Code d\'erreur: ' . $e->getCode());
+            $statusCode = $e->getCode() ?: 500;
 
-            return response()->json(['message' => 'Une erreur s\'est produite lors de la création de la tâche.'], 500);
+            return response()->json(['message' => 'Une erreur s\'est produite lors de la création de la tâche.'], $statusCode);
 
             exit;
         }
