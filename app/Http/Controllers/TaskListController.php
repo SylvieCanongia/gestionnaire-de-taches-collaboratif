@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\TaskList;
-use App\Models\Task;
+use App\Models\User;
 
 class TaskListController extends Controller
 {
@@ -13,10 +13,10 @@ class TaskListController extends Controller
         $this->middleware('auth');
     }
 
-    // Get all the taskLists data
+    // Get all task lists for the authenticated user
     public function index() {
-        // Get all task lists for the authenticated user
-        $taskLists = TaskList::where('user_id', auth()->id())->get();
+        $user = auth()->user();
+        $taskLists = $user->taskLists;
 
         return response()->json(['taskLists' => $taskLists]);
     }
@@ -29,17 +29,23 @@ class TaskListController extends Controller
      */
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
-            'list_name' => 'required|string|max:255',
-            'list_description' => 'nullable|string|max:500',
-        ]);
+        try {
+            $validatedData = $request->validate([
+                'list_name' => 'required|string',
+                'list_description' => 'nullable|string|max:500',
+            ]);
 
-        TaskList::create([
-            'list_name' => $validatedData['list_name'],
-            'list_description' => $validatedData['list_description'],
-            'user_id' => auth()->id(),
-        ]);
+            $user = auth()->user();
+            $taskList = new TaskList([
+                'list_name' => $validatedData['list_name'],
+                'list_description' => $validatedData['list_description'],
+            ]);
 
-        return response()->json(['message' => 'La liste de tâches a été créée avec succès !']);
+            $user->taskLists()->save($taskList);
+
+            return response()->json(['message' => 'La liste de tâches a été créée avec succès !']);
+        } catch (\Exception $e) {
+            return response()->json(['message' => 'Erreur lors de la création de la liste de tâches'], 500);
+        }
     }
 }
