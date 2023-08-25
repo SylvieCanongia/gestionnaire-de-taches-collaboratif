@@ -20,3 +20,5 @@ yarn-error.log
 /public/.htaccess
 .htaccess
 /docs
+
+_ide_helper_models.php
