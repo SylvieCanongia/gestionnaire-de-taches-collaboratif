@@ -43,7 +43,7 @@ class User extends Authenticatable // code for verify email : implements MustVer
      * @var array<string, string>
      */
     protected $casts = [
-        //'email_verified_at' => 'datetime',
+        'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
 
