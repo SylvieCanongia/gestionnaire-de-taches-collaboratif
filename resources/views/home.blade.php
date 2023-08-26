@@ -2,8 +2,7 @@
 
 @section('content')
 <div class="container">
-    <example-component></example-component>
-    <div class="row justify-content-center">
+    <!-- <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Tableau de bord') }}</div>
@@ -16,12 +15,11 @@
                     @endif
 
                     {{ __('Vous êtes connecté !') }}
-
-                    <task-lists-index></task-lists-index>
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
+    <task-list-index :user="{{ Auth::user() }}"></task-list-index>
 
 </div>
 @endsection
