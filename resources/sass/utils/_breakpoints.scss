@@ -1,0 +1,44 @@
+// To be able to use math.div
+@use "sass:math";
+
+$tabletSmallMin: 500;
+$tabletMediumMin: 750;
+$laptopMin: 1100;
+$desktopMin: 1500;
+
+// Min width converted to rem
+// Tablet small min-width : 31.25rem
+$tabletSmallMinRem: math.div($tabletSmallMin, 16);
+// Tablet medium min-width : 43.75rem
+$tabletMediumMinRem: math.div($tabletMediumMin, 16);
+// Laptop min-width : 68.75rem
+$laptopMinRem: math.div($laptopMin, 16);
+// desktopMin min-width : 93.75rem
+$desktopMinRem: math.div($desktopMin, 16);
+// Tablet only : between 34.375rem and 68.69rem
+$tabletMaxRem: math.div($laptopMin - 1, 16);
+
+
+@function breakpoints($deviceMin) {
+  $device: ("tabletSmallAndUp": "(min-width: #{$tabletSmallMinRem}rem)",
+    "tabletMediumAndUp": "(min-width: #{$tabletMediumMinRem}rem)",
+    "laptopAndUp": "(min-width: #{$laptopMinRem}rem)",
+    "desktopAndUp": "(min-width: #{$desktopMinRem}rem)",
+    "tabletOnly": "(min-width: #{$tabletSmallMinRem}rem) and (max-width: #{$tabletMaxRem}rem)"
+  );
+  @return map-get($device, $deviceMin);
+}
+
+@mixin media($deviceMinAndUp) {
+  $deviceMinAndUp: breakpoints($deviceMinAndUp);
+
+  @media #{$deviceMinAndUp} {
+    @content;
+  }
+}
+
+// Another way to set the breakpoint :
+// @mixin tabletAndUp {
+//   $tabletAndUp : breakpoints("tabletAndUp");
+//   @media #{$tabletAndUp} { @content; }
+// }

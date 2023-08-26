@@ -1,0 +1,96 @@
+// MEOW SCRIPT
+
+@font-face {
+  font-family: 'Meow Script';
+  src: url('./../fonts/meow-script/MeowScript-Regular.woff2') format('woff2'),
+    url('./../fonts/meow-script/MeowScript-Regular.woff') format('woff');
+  font-weight: 400;
+  /* Define how the browser behaves during download */
+  font-display: swap;
+  font-style: normal;
+}
+
+//  QUICKSAND
+
+@font-face {
+  font-family: 'Quicksand';
+  src: url('./../fonts/quicksand/Quicksand-Light.woff2') format('woff2'),
+    url('./../fonts/quicksand/Quicksand-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Quicksand';
+  src: url('./../fonts/quicksand/Quicksand-Regular.woff2') format('woff2'),
+    url('./../fonts/quicksand/Quicksand-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Quicksand';
+  src: url('./../fonts/quicksand/Quicksand-Medium.woff2') format('woff2'),
+    url('./../fonts/quicksand/Quicksand-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Quicksand';
+  src: url('./../fonts/quicksand/Quicksand-SemiBold.woff2') format('woff2'),
+    url('./../fonts/quicksand/Quicksand-SemiBold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Quicksand';
+  src: url('./../fonts/quicksand/Quicksand-Bold.woff2') format('woff2'),
+    url('./../fonts/quicksand/Quicksand-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+// LATO
+
+// @font-face {
+//   font-family: 'Lato';
+//   src: url('./../fonts/lato/Lato-Light.woff2') format('woff2'),
+//       url('./../fonts/lato/Lato-Light.woff') format('woff');
+//   font-weight: 300;
+//   font-style: normal;
+//   font-display: swap;
+// }
+
+// @font-face {
+//   font-family: 'Lato';
+//   src: url('./../fonts/lato/Lato-Regular.woff2') format('woff2'),
+//       url('./../fonts/lato/Lato-Regular.woff') format('woff');
+//   font-weight: 400;
+//   font-style: normal;
+//   font-display: swap;
+// }
+
+// @font-face {
+//   font-family: 'Lato';
+//   src: url('./../fonts/lato/Lato-Bold.woff2') format('woff2'),
+//       url('./../fonts/lato/Lato-Bold.woff') format('woff');
+//   font-weight: 700;
+//   font-style: normal;
+//   font-display: swap;
+// }
+
+// @font-face {
+//   font-family: 'Lato';
+//   src: url('./../fonts/lato/Lato-Black.woff2') format('woff2'),
+//       url('./../fonts/lato/Lato-Black.woff') format('woff');
+//   font-weight: 900;
+//   font-style: normal;
+//   font-display: swap;
+// }

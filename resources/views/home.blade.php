@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <!-- <example-component></example-component> -->
+    <example-component></example-component>
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -16,7 +16,7 @@
                     @endif
 
                     {{ __('Vous êtes connecté !') }}
-                    
+
                     <task-lists-index></task-lists-index>
                 </div>
             </div>

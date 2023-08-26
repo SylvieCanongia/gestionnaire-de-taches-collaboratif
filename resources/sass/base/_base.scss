@@ -1,0 +1,25 @@
+@use './../utils/variables' as vars;
+
+* {
+  list-style-type: none;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+body {
+  font-family: vars.$font-family;
+  font-size: vars.$fsize-16px;
+  font-weight: vars.$fweight-regular;
+  background-color: vars.$col-body-bg;
+}
+
+h1 {
+  color: vars.$col-white;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}

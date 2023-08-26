@@ -1,0 +1,84 @@
+// To be able to use math.div
+@use 'sass:math';
+
+/*  ====== PAGE WRAPPER ====== */
+
+// $widthWrapper: 24px;
+// $widthWrapper-laptop: 32px;
+// /* max-width 1550px */
+// $maxWidth: 96.875rem;
+
+/* ====== COLOR PALETTE ====== */
+
+// $col-primary :
+// $col-secondary :
+$col-black: hsl(0deg, 0%, 0%);
+$col-white: hsl(0, 0%, 100%);
+$col-body-bg: #f8fafc;
+
+/* Gradients */
+
+$line-height-base: 1.6;
+
+// ====== TYPOGRAPHY =======
+
+// ====== FONT FAMILY ======
+$font-family: 'Quicksand', sans-serif;
+
+// ====== FONT-SIZE ======
+
+$font-size-base: 0.9rem;
+
+$fsize-11px: 0.687rem;
+$fsize-12px: 0.75rem;
+$fsize-14px: 0.875rem;
+$fsize-15px: 0.9375rem;
+$fsize-16px: 1rem;
+$fsize-17px: 1.0625rem;
+$fsize-18px: 1.125rem;
+$fsize-19px: 1.1875rem;
+$fsize-20px: 1.25rem;
+$fsize-21px: 1.3125rem;
+$fsize-24px: 1.5rem;
+$fsize-32px: 2rem;
+$fsize-52px: 3.25rem;
+// $fsize-404-mobile: 6rem;
+// $fsize-404-desktop: 18rem;
+
+
+// ====== FONT WEIGHT ======
+
+$fweight-thin: 100;
+$fweight-light: 300;
+$fweight-regular: 400;
+// $fweight-medium: 500;
+$fweight-bold: 700;
+$fweight-black: 900;
+
+
+// ====== SPACING ======
+
+$space-base: 8px;
+$space-XS: 16px;
+$space-S: 24px;
+$space-M: 32px;
+$space-L: 40px;
+$space-XL: 48px;
+
+// ====== SIZES (HEIGHT, WIDTH) ======
+
+$size-XXS: 8px;
+$size-XS: 16px;
+$size-S: 24px;
+$size-M: 32px;
+$size-L: 40px;
+$size-XL: 48px;
+$size-XXL: 72px;
+
+
+// ====== RADIUS ======
+
+$radius-cercle: 50%;
+$radius-S: 5px;
+$radius-M: 10px;
+$radius-L: 25px;

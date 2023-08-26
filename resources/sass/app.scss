@@ -1,8 +1,34 @@
+// 1. Utils
+@use './utils/breakpoints';
+@use './utils/variables';
+@use './utils/functions';
+@use './utils/mixins';
+
+// 2. Vendors
+
+// 3. Base
+@use './base/custom_reset';
+@use './base/base';
+@use './base/fonts';
+@use './base/typography';
+
+// 4. Components
+// button, ...
+
+// 5. Layout
+// header, footer, ...
+
+// 6. Pages (code blocks that only apply to a single page)
+// home page,...
+
+// 7. Themes (custom style for example for Christmas, summer or Halloween)
+
 // Fonts
 @import url('https://fonts.bunny.net/css?family=Nunito');
 
-// Variables
-@import 'variables';
-
 // Bootstrap
 @import 'bootstrap/scss/bootstrap';
+
+
+
+
