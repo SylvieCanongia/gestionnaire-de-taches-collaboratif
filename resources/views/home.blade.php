@@ -2,11 +2,11 @@
 
 @section('content')
 <div class="container">
-    <example-component></example-component>
+    <!-- <example-component></example-component> -->
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+                <div class="card-header">{{ __('Tableau de bord') }}</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -15,14 +15,13 @@
                         </div>
                     @endif
 
-                    {{ __('You are logged in!') }}
+                    {{ __('Vous êtes connecté !') }}
+                    
+                    <task-lists-index></task-lists-index>
                 </div>
             </div>
         </div>
     </div>
-    <task-lists-index></task-lists-index>
-    <task-lists-details></task-lists-details>
-    <task-details></task-details>
-    <task-form></task-form>
+
 </div>
 @endsection
