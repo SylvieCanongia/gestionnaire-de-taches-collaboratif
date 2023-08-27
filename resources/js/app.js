@@ -15,13 +15,13 @@ const app = createApp({});
 import ExampleComponent from './components/ExampleComponent.vue';
 app.component('example-component', ExampleComponent);
 
-import TaskListIndex from './components/taskLists/TaskListIndex.vue';
+import TaskListIndex from './components/taskList/TaskListIndex.vue';
 app.component('task-list-index', TaskListIndex);
 
-import TaskListDetails from './components/taskLists/TaskListDetails.vue';
+import TaskListDetails from './components/taskList/TaskListDetails.vue';
 app.component('task-lists-details', TaskListDetails);
 
-import TaskDetails from './components/tasks/TaskDetails.vue';
+import TaskDetails from './components/task/TaskDetails.vue';
 app.component('task-details', TaskDetails);
 
 import TaskForm from './components/common/TaskForm.vue';
