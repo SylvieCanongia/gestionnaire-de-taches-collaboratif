@@ -13,18 +13,15 @@ import { createApp } from 'vue';
 const app = createApp({});
 
 import ExampleComponent from './components/ExampleComponent.vue';
-app.component('example-component', ExampleComponent);
-
 import TaskListIndex from './components/taskList/TaskListIndex.vue';
-app.component('task-list-index', TaskListIndex);
-
 import TaskListDetails from './components/taskList/TaskListDetails.vue';
-app.component('task-lists-details', TaskListDetails);
-
 import TaskDetails from './components/task/TaskDetails.vue';
-app.component('task-details', TaskDetails);
-
 import TaskForm from './components/common/TaskForm.vue';
+
+app.component('example-component', ExampleComponent);
+app.component('task-list-index', TaskListIndex);
+app.component('task-lists-details', TaskListDetails);
+app.component('task-details', TaskDetails);
 app.component('task-form', TaskForm);
 
 /**
@@ -37,6 +34,8 @@ app.component('task-form', TaskForm);
 Object.entries(import.meta.glob('./**/*.vue', { eager: true })).forEach(([path, definition]) => {
     app.component(path.split('/').pop().replace(/\.\w+$/, ''), definition.default);
 });
+
+
 
 /**
  * attach the application instance to a HTML element with

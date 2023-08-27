@@ -26,3 +26,4 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('task', App\Http\Controllers\Dashboard\TaskController::class);
     Route::resource('task-list', App\Http\Controllers\Dashboard\TaskListController::class);
 });
+
