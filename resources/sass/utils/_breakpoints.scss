@@ -1,21 +1,21 @@
 // To be able to use math.div
 @use "sass:math";
 
-$tabletSmallMin: 500;
-$tabletMediumMin: 750;
-$laptopMin: 1100;
-$desktopMin: 1500;
+$tabletSmallMin: 576;
+$tabletMediumMin: 768;
+$laptopMin: 992;
+$desktopMin: 1200;
 
 // Min width converted to rem
-// Tablet small min-width : 31.25rem
+// Tablet small min-width : 36rem
 $tabletSmallMinRem: math.div($tabletSmallMin, 16);
-// Tablet medium min-width : 43.75rem
+// Tablet medium min-width : 48rem
 $tabletMediumMinRem: math.div($tabletMediumMin, 16);
-// Laptop min-width : 68.75rem
+// Laptop min-width : 62rem
 $laptopMinRem: math.div($laptopMin, 16);
-// desktopMin min-width : 93.75rem
+// desktopMin min-width : 75rem
 $desktopMinRem: math.div($desktopMin, 16);
-// Tablet only : between 34.375rem and 68.69rem
+// Tablet only : between 36rem and 61.94rem
 $tabletMaxRem: math.div($laptopMin - 1, 16);
 
 
