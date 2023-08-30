@@ -20,8 +20,8 @@ body {
     justify-content: space-between;
 }
 
-h1 {
-  color: vars.$col-white;
+.footer {
+    margin-block-start: auto;
 }
 
 @media (prefers-color-scheme: dark) {

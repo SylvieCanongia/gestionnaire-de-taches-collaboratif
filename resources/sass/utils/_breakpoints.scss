@@ -5,6 +5,7 @@ $tabletSmallMin: 576;
 $tabletMediumMin: 768;
 $laptopMin: 992;
 $desktopMin: 1200;
+$desktopXXLMin : 1400;
 
 // Min width converted to rem
 // Tablet small min-width : 36rem
@@ -42,3 +43,12 @@ $tabletMaxRem: math.div($laptopMin - 1, 16);
 //   $tabletAndUp : breakpoints("tabletAndUp");
 //   @media #{$tabletAndUp} { @content; }
 // }
+
+// ===== BOOTSTRAP BREAKPOINTS =====
+
+// $bs-breakpoint-xs: 0;
+// $bs-breakpoint-sm: 576px;
+// $bs-breakpoint-md: 768px;
+// $bs-breakpoint-lg: 992px;
+// $bs-breakpoint-xl: 1200px;
+// $bs-breakpoint-xxl: 1400px;

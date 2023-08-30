@@ -1,3 +1,6 @@
+// Bootstrap
+@use 'bootstrap/scss/bootstrap';
+
 // 1. Utils
 @use './utils/breakpoints';
 @use './utils/variables';
@@ -9,8 +12,8 @@
 // 3. Base
 @use './base/custom_reset';
 @use './base/base';
-@use './base/fonts';
-@use './base/typography';
+@use './base/typography/fonts';
+@use './base/typography/font-sizes';
 
 // 4. Components
 // button, ...
@@ -23,12 +26,11 @@
 
 // 7. Themes (custom style for example for Christmas, summer or Halloween)
 
+// Style for specific blade views
+@use './welcome';
+
 // Fonts
 @import url('https://fonts.bunny.net/css?family=Nunito');
-
-// Bootstrap
-@import 'bootstrap/scss/bootstrap';
-
 
 
 
