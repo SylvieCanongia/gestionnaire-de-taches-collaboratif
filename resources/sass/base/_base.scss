@@ -7,8 +7,12 @@
   text-decoration: none;
 }
 
+html {
+    font-size: vars.$font-size-base;
+}
+
 body {
-  font-family: vars.$font-family;
+  font-family: vars.$font-family1;
   font-size: vars.$fsize-16px;
   font-weight: vars.$fweight-regular;
   background-color: vars.$col-body-bg;
@@ -19,6 +23,38 @@ body {
     flex-direction: column;
     justify-content: space-between;
 }
+
+p {
+    font-size: vars.$fsize-16px;
+    font-weight: 400;
+}
+
+.btn {
+    display: inline-block;
+    padding-inline: vars.$btn-padding-x;
+    padding-block: vars.$btn-padding-y;
+    font-family: inherit;
+    font-size: vars.$btn-font-size;
+    font-weight: vars.$btn-font-weight;
+    line-height: vars.$btn-line-height;
+    color: vars.$btn-color;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    border: vars.$btn-border-width solid vars.$btn-border-color;
+    border-radius: vars.$btn-border-radius;
+    background-color: vars.$btn-bg;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,         box-shadow 0.15s ease-in-out;
+}
+
+button:hover, .button:hover, .btn:hover {
+    color: vars.$btn-hover-color;
+    background-color: vars.$btn-hover-bg;
+    border-color: vars.$btn-hover-border-color;
+}
+
 
 .footer {
     margin-block-start: auto;

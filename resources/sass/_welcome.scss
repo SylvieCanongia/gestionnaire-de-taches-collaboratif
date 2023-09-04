@@ -1,0 +1,17 @@
+@use './utils/variables' as vars;
+
+.welcomeBody {
+    background-image: url('https://source.unsplash.com/random');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+
+    .h1 {
+        color: vars.$col-white;
+    }
+
+    .welcome__content {
+        font-weight: vars.$fweight-bold;
+        color: vars.$col-white;
+    }
+}

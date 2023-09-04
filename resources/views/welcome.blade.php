@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Gestionnaire de tâches</title>
+        <title>Gestionnaire de tâches collaboratif- Accueil</title>
 
         @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 
@@ -15,25 +15,26 @@
         <!-- Styles -->
 
     </head>
-    <body class="antialiased">
-        <div class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
-            @if (Route::has('login'))
-                <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
-                    @auth
-                        <a href="{{ url('/home') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Accueil</a>
-                    @else
-                        <a href="{{ route('login') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Se connecter</a>
+    <body class="welcomeBody antialiased">
+        <div class="welcome__container">
+                    <h1 class="h1 welcome__heading">
+                    Libérez tout votre potentiel avec notre gestionnaire de tâches collaboratif.
+                    </h1>
+                    <p class="welcome__content"> Gérez vos tâches efficacement et collaborez avec votre équipe en toute simplicité. Notre gestionnaire de tâches est conçu pour vous aider à atteindre vos objectifs et à améliorer votre productivité.!</p>
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">S'inscrire</a>
-                        @endif
-                    @endauth
+                    @if (Route::has('login'))
+                        <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
+                            @auth
+                                <a href="{{ url('/home') }}" class="btn">Accueil</a>
+                            @else
+                                <a href="{{ route('login') }}" class="btn">Se connecter</a>
+
+                                @if (Route::has('register'))
+                                    <a href="{{ route('register') }}" class="btn">S'inscrire</a>
+                                @endif
+                            @endauth
+                        </div>
+                    @endif
                 </div>
-            @endif
-        </div>
-        <h1>
-        Libérez tout votre potentiel avec notre gestionnaire de tâches collaboratif.
-        </h1>
-        <p> Simplifiez votre quotidien, réalisez vos objectifs. L'inscription est gratuite, la productivité est illimitée !</p>
     </body>
 </html>

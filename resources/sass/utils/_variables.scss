@@ -16,11 +16,13 @@ $line-height-base: 1.6;
 // ====== TYPOGRAPHY =======
 
 // ====== FONT FAMILY ======
-$font-family: 'Quicksand', sans-serif;
+$font-family1: 'Lato', sans-serif;
+$font-family2: 'Meow Script', cursive;
+$font-family3: 'Quicksand', sans-serif;
 
 // ====== FONT-SIZE ======
 
-$font-size-base: 0.9rem;
+$font-size-base: 1em;
 
 $fsize-11px: 0.687rem;
 $fsize-12px: 0.75rem;
@@ -37,7 +39,6 @@ $fsize-32px: 2rem;
 $fsize-52px: 3.25rem;
 // $fsize-404-mobile: 6rem;
 // $fsize-404-desktop: 18rem;
-
 
 // ====== FONT WEIGHT ======
 
@@ -75,3 +76,48 @@ $radius-cercle: 50%;
 $radius-S: 5px;
 $radius-M: 10px;
 $radius-L: 25px;
+
+// ====== WELCOME PAGE VARS ======
+$body-background-image: url('https://source.unsplash.com/random');
+$body-background-repeat: no-repeat;
+$body-background-position: center center;
+$body-background-size: cover;
+
+// ====== BUTTON ======
+$body-color: hsl(210, 11%, 15%);
+$body-hover-color: hsl(210, 11%, 1%);
+
+$border-radius: 0.375rem;
+$border-radius-sm: 0.25rem;
+$border-radius-lg: 0.5rem;
+$border-radius-xl: 1rem;
+$border-radius-xxl: 2rem;
+$border-radius-2xl: var($border-radius-xxl);
+$border-radius-pill: 50rem;
+
+$border-width: 1px;
+
+$border-style: solid;
+$border-color: hsl(210, 14%, 89%);
+$border-color-translucent: hsla(0, 0%, 0%, 0.175);
+$border-color-hover: hsl(240, 100%, 0%);
+$bg-color-hover: hsl(240, 100%, 0%);
+
+$btn-padding-x: 0.75rem;
+$btn-padding-y: 0.375rem;
+$btn-font-size: 1rem;
+$btn-font-weight: $fweight-regular;
+$btn-line-height: 1.5;
+$btn-bg: transparent;
+$btn-color: $body-color;
+$btn-border-width: $border-width;
+// $btn-border-color: transparent;
+$btn-border-color: $border-color-translucent;
+$btn-border-radius: $border-radius;
+$btn-hover-color: $border-color;
+$btn-hover-bg: $bg-color-hover;
+// $btn-hover-border-color: transparent;
+$btn-hover-border-color: $border-color-hover;
+$btn-box-shadow: inset 0 1px 0 hsla(0, 0%, 100%, 0.15), 0 1px 1px hsla(0, 0%, 0%, 0.075);
+$btn-disabled-opacity: 0.65;
+// $btn-focus-box-shadow: 0 0 0 0.25rem rgba($btn-focus-shadow-rgb, .5);
