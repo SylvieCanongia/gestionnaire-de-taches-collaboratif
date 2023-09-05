@@ -7,8 +7,8 @@
                     <section>
                         <a :href="taskListCreateUrl" class="btn btn-primary">Créer une liste de tâches</a>
 
-                        <ul v-for="(taskList, key) in taskLists" :key="key" class="list-group">
-                            <taskLineVue :item="taskList"></taskLineVue>
+                        <ul v-for="(taskList, key) in taskLists.data" :key="key" class="list-group">
+                            <TaskLineVue :item="taskList"></TaskLineVue>
                             <!-- <li class="list-group-item list-group-item-action list-group-item-warning">
                                 Pas de liste trouvée.
                             </li> -->
@@ -21,12 +21,13 @@
 </template>
 
 <script setup>
-import taskLineVue from "../common/taskLine.vue";
+import TaskLineVue from '../common/TaskLine.vue';
 
 const { user, taskLists } = defineProps(['user', 'taskLists', 'taskListCreateUrl']);
 
 // console.log('user', user);
-// console.log('taskLists', taskLists);
+console.log('taskLists', taskLists);
+// console.log(taskLists.data);
 
 </script>
 

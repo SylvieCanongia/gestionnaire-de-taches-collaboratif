@@ -4,9 +4,7 @@ namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use App\Models\TaskList;
-use App\Models\User;
 
 class TaskListController extends Controller
 {
@@ -20,8 +18,9 @@ class TaskListController extends Controller
      */
     public function index() {
         $user = auth()->user();
-        $taskLists = $user->taskLists;
-
+        // $taskLists = $user->taskList;
+        $taskLists = TaskList::where('user_id', $user->id)->paginate(10);
+        // dd($taskLists);
         return response()->json(['taskLists' => $taskLists]);
     }
 
