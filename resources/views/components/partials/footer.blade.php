@@ -1,3 +1,3 @@
 <footer class="footer">
-    &copy; <script>document.write(new Date().getFullYear())</script> Mon gestionnaire de tâches. Tous droits réservés.
+    &copy; @php echo date('Y'); @endphp Mon gestionnaire de tâches. Tous droits réservés.
 </footer>
