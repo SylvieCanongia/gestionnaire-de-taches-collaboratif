@@ -5,6 +5,9 @@ namespace App\Http\Controllers\Dashboard;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\TaskList;
+use Illuminate\Http\JsonResponse;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Routing\Redirector;
 
 class TaskListController extends Controller
 {
@@ -16,11 +19,12 @@ class TaskListController extends Controller
     /**
      * Display a listing of the task lists.
      */
-    public function index() {
+    public function index(): JsonResponse {
         $user = auth()->user();
         // $taskLists = $user->taskList;
         $taskLists = TaskList::where('user_id', $user->id)->paginate(10);
         // dd($taskLists);
+
         return response()->json(['taskLists' => $taskLists]);
     }
 
@@ -62,11 +66,17 @@ class TaskListController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified taskList.
      */
-    public function show(string $id)
+    public function show(string $task_list): RedirectResponse | TaskList
     {
-        //
+        $taskList = TaskList::findOrFail($task_list);
+
+        // if($taskList->list_id != $task_list) {
+        //     return redirect()->route('task-list.show', ['task_list' => $taskList->list_id]);
+        // }
+
+        return $taskList;
     }
 
     /**
