@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 use App\Models\TaskList;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Routing\Redirector;
 
 class TaskListController extends Controller
 {
@@ -70,7 +69,8 @@ class TaskListController extends Controller
      */
     public function show(string $task_list): RedirectResponse | TaskList
     {
-        $taskList = TaskList::findOrFail($task_list);
+        $user = auth()->user();
+        $taskList = TaskList::where('user_id', $user->id)->findOrFail($task_list);
 
         // if($taskList->list_id != $task_list) {
         //     return redirect()->route('task-list.show', ['task_list' => $taskList->list_id]);
