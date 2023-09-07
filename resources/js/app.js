@@ -4,6 +4,7 @@
  */
 
 import './bootstrap';
+import axios from 'axios';
 import { createApp } from 'vue';
 
 /**
@@ -16,13 +17,13 @@ import ExampleComponent from './components/ExampleComponent.vue';
 import TaskListIndex from './components/taskList/TaskListIndex.vue';
 import TaskListDetails from './components/taskList/TaskListDetails.vue';
 import TaskDetails from './components/task/TaskDetails.vue';
-import TaskForm from './components/common/TaskForm.vue';
+import TaskListForm from './components/taskList/TaskListForm.vue';
 
 app.component('example-component', ExampleComponent);
 app.component('task-list-index', TaskListIndex);
 app.component('task-lists-details', TaskListDetails);
 app.component('task-details', TaskDetails);
-app.component('task-form', TaskForm);
+app.component('task-list-form', TaskListForm);
 
 /**
  * automatically register the Vue components. It will recursively scan this directory for the Vue

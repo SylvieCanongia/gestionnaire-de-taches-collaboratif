@@ -8,6 +8,7 @@ use App\Models\TaskList;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 
+
 class TaskListController extends Controller
 {
     public function __construct()
@@ -20,9 +21,7 @@ class TaskListController extends Controller
      */
     public function index(): JsonResponse {
         $user = auth()->user();
-        // $taskLists = $user->taskList;
         $taskLists = TaskList::where('user_id', $user->id)->paginate(10);
-        // dd($taskLists);
 
         return response()->json(['taskLists' => $taskLists]);
     }
@@ -57,10 +56,12 @@ class TaskListController extends Controller
 
             $user->taskLists()->save($taskList);
 
-            return response()->json(['message' => 'La liste de tâches a été créée avec succès !']);
+            // return redirect('/home');
+            // return response()->json(['message' => 'L\'opération a été réalisée avec succès !']);
+            return redirect()->route('home')->with('success_message', 'L\'opération a été réalisée avec succès !')->withHeaders(['Cache-Control' => 'no-cache, no-store, must-revalidate'])->withRefresh(3000);
         } catch (\Exception $e) {
-            $statusCode = $e->getCode() ?: 500;
-            return response()->json(['message' => 'Erreur lors de la création de la liste de tâches'], $statusCode);
+            // $statusCode = $e->getCode() ?: 500;
+            return redirect()->back()->withErrors(['list_name' => 'Le champ nom est requis.']);
         }
     }
 

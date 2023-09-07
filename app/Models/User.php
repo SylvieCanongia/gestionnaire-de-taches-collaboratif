@@ -47,7 +47,7 @@ class User extends Authenticatable // code for verify email : implements MustVer
         'password' => 'hashed',
     ];
 
-    public function taskList()
+    public function taskLists()
     {
     return $this->hasMany(TaskList::class, 'user_id');
     }

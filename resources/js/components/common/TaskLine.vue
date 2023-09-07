@@ -5,7 +5,7 @@
             <p>{{ item && item.list_description ? item.list_description : "" }}</p>
             <span class="d-flex justify-content-between align-items-center">
                 <a class="text-success mr-2" href="#">
-                    <i class="fa fa-edit"> </i>
+                    <i class="fa fa-edit"></i>
                 </a>
                 <a class="text-danger" href="#">
                     <i class="fa fa-trash-o"></i>

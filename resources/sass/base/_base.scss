@@ -67,3 +67,60 @@ button:hover, .button:hover, .btn:hover {
     color-scheme: dark;
   }
 }
+
+// ALERT BOX
+// Alert Success (Grenn)
+.alert {
+    padding: 10px;
+    border-radius: 4px;
+}
+.alert-success {
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    color: #155724;
+
+    background-color: #dff0d8;
+    color: #3c763d;
+    border: 1px solid #d6e9c6;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+// Alert Info (Blue)
+.alert-info {
+    background-color: #d1ecf1;
+    border-color: #bee5eb;
+    color: #0c5460;
+}
+
+// Alert Warning (yellow)
+.alert-warning {
+    background-color: #fff3cd;
+    border-color: #ffeeba;
+    color: #856404;
+}
+
+// Alerte Error (Red)
+.alert-danger {
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    color: #721c24;
+}
+
+// Style for close button
+.btn-close {
+    float: right;
+    font-size: 1.25rem;
+    font-weight: bold;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    opacity: 0.5;
+
+    &:hover {
+        color: #000;
+        text-decoration: none;
+        opacity: 0.75;
+    }
+}
+
