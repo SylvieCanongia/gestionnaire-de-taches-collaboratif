@@ -19,10 +19,11 @@
 </head>
 <body>
     <div id="app">
-
+        
         <x-partials.header />
 
         <main class="py-4">
+            @include('flash-message')
             @yield('content')
         </main>
 

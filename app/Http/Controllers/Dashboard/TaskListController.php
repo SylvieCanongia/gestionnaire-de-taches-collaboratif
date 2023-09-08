@@ -8,7 +8,6 @@ use App\Models\TaskList;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 
-
 class TaskListController extends Controller
 {
     public function __construct()
@@ -49,6 +48,7 @@ class TaskListController extends Controller
             ]);
 
             $user = $request->user();
+
             $taskList = new TaskList([
                 'list_name' => $validatedData['list_name'],
                 'list_description' => $validatedData['list_description'],
@@ -56,13 +56,14 @@ class TaskListController extends Controller
 
             $user->taskLists()->save($taskList);
 
-            // return redirect('/home');
-            // return response()->json(['message' => 'L\'opération a été réalisée avec succès !']);
-            return redirect()->route('home')->with('success_message', 'L\'opération a été réalisée avec succès !')->withHeaders(['Cache-Control' => 'no-cache, no-store, must-revalidate'])->withRefresh(3000);
+            return redirect()->route('home')->with('success', 'La liste a été créée avec succès !');
+            // return back()->with('success','La liste a été créée avec succès !');
+
         } catch (\Exception $e) {
             // $statusCode = $e->getCode() ?: 500;
             return redirect()->back()->withErrors(['list_name' => 'Le champ nom est requis.']);
         }
+        return redirect()->back();
     }
 
     /**
